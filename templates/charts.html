@@ -1,0 +1,168 @@
+<!--
+=========================================================
+ Material Dashboard - v2.1.1
+=========================================================
+
+ Product Page: https://www.creative-tim.com/product/material-dashboard
+ Copyright 2019 Creative Tim (https://www.creative-tim.com)
+ Licensed under MIT (https://github.com/creativetimofficial/material-dashboard/blob/master/LICENSE.md)
+
+ Coded by Creative Tim
+
+=========================================================
+
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv    8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+ <script src="{{ url_for('static', filename='js/jquery-1.11.1.min.js') }}"></script>
+ <script src="{{ url_for('static', filename='js/plots.js') }}"></script>
+
+  <title>Bank, Marketing!</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!-- Material Kit CSS -->
+  <link href="{{ url_for('static', filename='assets/css/material-dashboard.css') }}" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="wrapper ">
+    <div class="sidebar" data-color="purple" data-background-color="white">
+      <!--
+      Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+      Tip 2: you can also add an image using data-image tag
+  -->
+      <div class="logo">
+        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+          Main Menu
+        </a>
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="nav-item ">
+            <a class="nav-link" href="http://127.0.0.1:5000/">
+              <i class="material-icons">dashboard</i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+
+          <li class="nav-item ">                                                                                                          
+              <a class="nav-link" href="http://127.0.0.1:5000/get_profile_report">
+                <i class="material-icons">library_books</i>
+                <p>Profiling Report</p>
+              </a>
+            </li>
+
+          <li class="nav-item active">                                                                                                          
+              <a class="nav-link" href="http://127.0.0.1:5000/get_chart">
+                <i class="material-icons">library_books</i>
+                <p>Charts</p>
+              </a>
+            </li>
+
+          <!-- your sidebar here -->
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <a class="navbar-brand" href="#pablo">Dashboard</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#pablo">
+                  <i class="material-icons">notifications</i> Notifications
+                </a>
+              </li>
+              <!-- your navbar here -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="content">
+        <div class="container-fluid">
+
+    <button type="button" class="btn btn-primary" onclick="Chart1()">Chart-1</button>
+    <button type="button" class="btn btn-secondary" onclick="Chart2()">Chart-2</button>
+    <button type="button" class="btn btn-success" onclick="Chart3()">Chart-3</button>
+    <button type="button" class="btn btn-danger" onclick="Chart4()">Chartt4</button>
+    <button type="button" class="btn btn-warning">Chart-5</button>
+    <button type="button" class="btn btn-info">Chart-6</button>
+
+<p id="demo"></p>
+
+<script>
+function Chart1() {
+  document.getElementById("demo").innerHTML = '<iframe src="{{ url_for("static", filename="dashboard_first_chart1.html") }}" style="height:800px;width:1000px;border:none;"></iframe>';
+}
+</script>
+
+<script>
+function Chart2() {
+  document.getElementById("demo").innerHTML = '<iframe src="{{ url_for("static", filename="dashboard_first_chart2.html") }}" style="height:800px;width:1000px;border:none;"></iframe>';
+}
+</script>
+
+<script>
+function Chart3() {
+  document.getElementById("demo").innerHTML = '<iframe src="{{ url_for("static", filename="dashboard_first_chart3.html") }}" style="height:800px;width:1000px;border:none;"></iframe>';
+}
+</script>
+
+<script>
+function Chart4() {
+  document.getElementById("demo").innerHTML = '<iframe src="{{ url_for("static", filename="dashboard_first_chart4.html") }}" style="height:800px;width:1000px;border:none;"></iframe>';
+}
+</script>
+
+
+          <!-- your content here -->
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container-fluid">
+          <nav class="float-left">
+            <ul>
+              <li>
+                <a href="https://www.creative-tim.com">
+                  Creative Tim
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="copyright float-right">
+            &copy;
+            <script>
+              document.write(new Date().getFullYear())
+            </script>, made with <i class="material-icons">favorite</i> by
+            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
+          </div>
+          <!-- your footer here -->
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+
+</html>
