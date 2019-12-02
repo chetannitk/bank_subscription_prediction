@@ -27,9 +27,17 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- Material Kit CSS -->
   <link href="{{ url_for('static', filename='assets/css/material-dashboard.css') }}" rel="stylesheet" />
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{{
+  url_for('static', filename='jquery.js') }}">\x3C/script>')</script>
 </head>
 
 <body>
+<script type=text/javascript>
+  $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
+
   <div class="wrapper ">
     <div class="sidebar" data-color="purple" data-background-color="white">
       <!--
@@ -105,7 +113,13 @@
                     <i class="material-icons">content_copy</i>
                   </div>
                   <p class="card-category">Number of observations</p>
-                  <h3 class="card-title">41188
+                  <h3 class="card-title" id="observation">
+                   <script>
+                       $.getJSON($SCRIPT_ROOT + '/_get_observation', function(data) {
+                             $("h3#observation").text(data.result);
+                              });
+                   </script>
+
                     <small></small>
                   </h3>
                 </div>
@@ -123,7 +137,12 @@
                     <i class="material-icons">content_copy</i>
                   </div>
                   <p class="card-category">Client Subscription Count</p>
-                  <h3 class="card-title">4640
+                  <h3 class="card-title" id="subs_cnt">
+                   <script>
+                       $.getJSON($SCRIPT_ROOT + '/_get_subscriber_count', function(data) {
+                             $("h3#subs_cnt").text(data.result);
+                              });
+                   </script>
                     <small></small>
                   </h3>
                 </div>
