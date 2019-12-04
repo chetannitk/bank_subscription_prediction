@@ -10,7 +10,16 @@ from flask import Flask, render_template, url_for, request, Markup, jsonify
 from flask_script import Manager
 
 app = Flask(__name__)
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 df = pd.read_csv("./data/bank-additional/bank-additional-full.csv", sep=";")
+
+@app.after_request
+def add_header(response):
+    # response.cache_control.no_store = True
+    response.headers['Cache-Control'] = 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0, max-age=0'
+    response.headers['Pragma'] = 'no-cache'
+    response.headers['Expires'] = '-1'
+    return response
 
 @app.route('/')
 def index():
@@ -36,7 +45,6 @@ def get_chart():
 def chart1():
     data = json.dumps(df_list)
     return render_template('charts.html', data=data)
-
 
 if __name__ == '__main__':
     app.run()
