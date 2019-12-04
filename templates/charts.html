@@ -124,6 +124,7 @@
     <button type="button" class="btn btn-danger" onclick="Chart4()">Chartt4</button>
     <button type="button" class="btn btn-warning" onclick="Chart5()">Chart-5</button>
     <button type="button" class="btn btn-info" onclick="Chart6()">Chart-6</button>
+    <button type="button" class="btn btn-success" onclick="Chart7()">Chart-7</button>
 
 <p id="demo"></p>
 
@@ -162,6 +163,11 @@ function Chart6() {
 }
 </script>
 
+<script>
+function Chart7() {
+  document.getElementById("demo").innerHTML = '<iframe src="{{ url_for("static", filename="dashboard_first_chart7.html") }}" style="height:800px;width:1000px;border:none;"></iframe>';
+}
+</script>
           <!-- your content here -->
         </div>
       </div>
