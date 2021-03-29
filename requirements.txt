@@ -176,7 +176,7 @@ PyAutoGUI==0.9.48
 pycparser==2.19
 PyDispatcher==2.0.5
 PyGetWindow==0.0.7
-Pygments==2.4.2
+Pygments==2.7.4
 PyHamcrest==1.9.0
 pylint==2.3.1
 pymc3==3.7
