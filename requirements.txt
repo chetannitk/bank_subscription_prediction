@@ -134,7 +134,7 @@ mpld3==0.3
 mxnet==1.4.0
 nb-conda==2.2.1
 nb-conda-kernels==2.2.2
-nbconvert==5.5.0
+nbconvert==6.5.1
 nbformat==4.4.0
 netCDF4==1.5.1.2
 networkx==2.3
