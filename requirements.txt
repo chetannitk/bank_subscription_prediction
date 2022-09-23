@@ -165,7 +165,7 @@ polyglot==16.7.4
 poyo==0.5.0
 prometheus-client==0.7.0
 prompt-toolkit==2.0.9
-protobuf==3.8.0
+protobuf==3.18.3
 ptyprocess==0.6.0
 py==1.8.0
 py4j==0.10.7
