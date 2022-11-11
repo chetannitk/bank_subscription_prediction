@@ -189,7 +189,7 @@ PyRect==0.1.4
 pyrsistent==0.15.2
 PyScreeze==0.1.24
 PySocks==1.7.0
-pyspark==2.4.3
+pyspark==3.2.2
 pytest==4.6.3
 pytest-pylint==0.14.1
 python-dateutil==2.8.0
